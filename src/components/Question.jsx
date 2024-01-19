@@ -52,7 +52,7 @@ export const Question = ({
 					onReset={onReset}
 				/>
 			) : (
-				<div className='flex flex-col justify-between shadow-md  shadow-slate-300 w-[600px] h-[600px] p-10 rounded-lg'>
+				<div className='container flex flex-col justify-center bg-slate-300 gap-10 shadow-md shadow-gray-500 max-w-[600px] h-[600px] p-10 rounded-lg' >
 					<div className='flex justify-between'>
 						<span className='text-xl font-bold'>
 							
@@ -68,7 +68,7 @@ export const Question = ({
 					</div>
 
 					<button
-						className='border px-5 py-2 rounded-lg font-bold transition-all hover:bg-yellow-500 hover:text-gray-900'
+						className='border px-5 py-2 rounded-lg font-bold transition-all bg-yellow-500 hover:scale-105 hover:text-gray-900'
 						onClick={onReset}
 					>
 						Reiniciar
@@ -82,13 +82,13 @@ export const Question = ({
 						
 						{answersRandom.map((answer, index) => (
 							<button
-								className={`border p-5 rounded-lg flex justify-center items-center hover:scale-105 ${
+								className={`border-black p-5 rounded-lg flex justify-center items-center hover:scale-105 ${
 									selectAnswerIndex !== null &&
 									index === selectAnswerIndex
 										? answer === filteredQuestion.correct_answer
 											? 'bg-green-500'
 											: 'bg-red-500'
-										: ''
+										: 'bg-violet-300'
 								}`}
 								key={answer}
 								onClick={() => checkAnswer(answer, index)}
